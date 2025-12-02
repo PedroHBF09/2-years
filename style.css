@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050510; 
+    color: #e0e0e0;
+    font-family: 'Cinzel', serif; 
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stars, .twinkling {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.stars {
+    background: #000 url('images/galaxy-bg.jpeg') repeat top center;
+    z-index: -2;
+}
+
+.twinkling {
+    background: #000 url('images/galaxy-bg.jpeg') repeat top center;
+    z-index: -1;
+    animation: move-twink-back 200s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    z-index: 1;
+    text-align: center;
+    margin: 40px 0;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0 0 10px #a482d8, 0 0 20px #a482d8; 
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #d4af37; 
+    margin-bottom: 30px;
+}
+
+.icon-top {
+    font-size: 1.5rem;
+    color: #a482d8;
+    margin-bottom: 10px;
+    animation: pulse 2s infinite;
+}
+
+.card {
+    background: rgba(20, 20, 40, 0.7); 
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(164, 130, 216, 0.3);
+    border-radius: 15px;
+    padding: 40px 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-frame {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    border: 3px solid #d4af37; 
+    padding: 5px;
+    box-shadow: 0 0 15px #d4af37;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: sepia(20%); 
+}
+
+.content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.divider {
+    margin: 20px 0;
+    color: #fff;
+}
+.mountain-symbol {
+    font-size: 2rem;
+    display: block;
+    line-height: 0.5;
+    text-shadow: 0 0 10px #fff;
+}
+.stars-symbol {
+    font-size: 1rem;
+    color: #d4af37;
+    margin-top: -5px;
+}
+
+.quote {
+    font-style: italic;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    color: #a482d8; /* Roxo Velaris */
+    margin: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 15px 0;
+}
+
+.message-body p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #dcdcdc;
+    font-weight: 400;
+}
+
+.highlight {
+    color: #d4af37;
+    font-weight: 700;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+footer p{
+    margin-top: 40px;
+    font-size: .9rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    .card {
+        padding: 20px 15px;
+    }
+}
+
+.black {
+    background-color: #0000007e; /* Fundo preto puro */
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
