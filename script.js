@@ -1,7 +1,7 @@
 const hourElement = document.getElementById("hour");
 const daysElement = document.getElementById("days");
 const music = document.getElementById("music");
-const now = new Date();  
+const playBtn = document.getElementById("playBtn");
 const day = new Date("2023-12-03T22:00:00");
 
 function diferencaHoras(data1, data2) {
@@ -26,9 +26,16 @@ function diferencaDias(data1, data2) {
   return `${dias}`;
 }
 
-hourElement.innerText = `Juntos à ${diferencaHoras(day, now)}`;
+setInterval(() => {
+  const now = new Date();
+  hourElement.innerText = `Juntos há ${diferencaHoras(day, now)}`;
+  daysElement.innerText = diferencaDias(day, now);
+}, 1000);
 
-daysElement.innerText = diferencaDias(day, now);
+playBtn.addEventListener("click", () => {
+  music.volume = 0.03;
+  music.play();
+  playBtn.remove(); 
+});
 
-music.volume = 0.03
-  
+music.volume = 0.03;
